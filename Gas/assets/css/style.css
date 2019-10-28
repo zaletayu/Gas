@@ -70,18 +70,29 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   line-height: 30px;
   transition: all 0.1s linear;
+  position: relative;
 }
 
 .header__inner_nav_a img {
   transition: all 0.2s linear;
 }
 
-.header__inner_nav_a:hover {
-  border-bottom: 2px solid #0500FF;
+.header__inner_nav_a:after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #0500FF;
+
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  z-index: 1;
+
+  transition: width .2s linear;
 }
 
-.header__inner_nav_a:nth-child(4):hover {
-  border-bottom: none;
+.header__inner_nav_a:hover:not(.no__border):after {
+  width: 100%;
 }
 
 .header__inner_nav_a:nth-child(4):hover img {
@@ -720,10 +731,25 @@ h1, h2, h3, h4, h5, h6 {
   height: 22px;
   color: #fff;
   line-height: 22px;
+  position: relative;
 }
 
-.footer__cont_cent_a:hover {
-  border-bottom: 2px solid #0500FF;
+.footer__cont_cent_a:after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #0500FF;
+
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  z-index: 1;
+
+  transition: width .2s linear;
+}
+
+.footer__cont_cent_a:hover:not(.no__border):after {
+  width: 100%;
 }
 
 .footer__cont_right {
